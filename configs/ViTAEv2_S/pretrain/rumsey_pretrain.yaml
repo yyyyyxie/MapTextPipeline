@@ -1,0 +1,23 @@
+_BASE_: "../Base_det.yaml"
+
+MODEL:
+  WEIGHTS: "weights/vitaev2-s_pretrain_synth-tt-mlt-13-15-textocr.pth"
+
+DATASETS:
+  TRAIN: ("totaltext_train_148voc","mlt_148voc","ic13_train_148voc","ic15_train_148voc", "textocr1_148voc", "textocr2_148voc","rumsey_train_148voc",)
+  TEST: ("rumsey_val_148voc","totaltext_test",)
+
+SOLVER:
+  IMS_PER_BATCH: 4
+  BASE_LR: 1e-4
+  LR_BACKBONE: 1e-5
+  WARMUP_ITERS: 0
+  STEPS: (100000,)
+  MAX_ITER: 120000
+  CHECKPOINT_PERIOD: 4000
+
+TEST:
+  EVAL_PERIOD: 2000
+  LEXICON_TYPE: None
+
+OUTPUT_DIR:  "output/vitaev2/pretrain/pretrain_rumsey_bs4_frozen"

@@ -1,0 +1,28 @@
+_BASE_: "../Base_det.yaml"
+
+MODEL:
+  # WEIGHTS: "output/R_50/pretrain/pretrain_rumsey_bs4_frozen/model_final.pth"
+  WEIGHTS: "weights/map/pretrain_120k.pth"
+
+  
+  TRANSFORMER:
+    FROZEN: False
+
+DATASETS:
+  TRAIN: ("rumsey_train_148voc",)
+  TEST: ("rumsey_val_148voc",)
+
+SOLVER:
+  IMS_PER_BATCH: 4
+  BASE_LR: 1e-4
+  LR_BACKBONE: 1e-5
+  WARMUP_ITERS: 0
+  STEPS: (8000,)
+  MAX_ITER: 10000
+  CHECKPOINT_PERIOD: 2000
+
+TEST:
+  EVAL_PERIOD: 1000
+  LEXICON_TYPE: None
+
+OUTPUT_DIR:  "output/R_50/finetune/pretrain_rumsey_bs4"

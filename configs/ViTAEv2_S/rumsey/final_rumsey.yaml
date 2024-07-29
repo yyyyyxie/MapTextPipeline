@@ -1,0 +1,35 @@
+_BASE_: "../Base_det.yaml"
+
+MODEL:
+  WEIGHTS: "weights/map/frozen_pretrain_40k.pth"
+
+  TRANSFORMER:
+    FROZEN: False
+
+DATASETS:
+  TRAIN: ("rumsey_train_148voc", "rumsey_val_148voc",)
+  TEST: ("rumsey_val_148voc",)
+
+SOLVER:
+  IMS_PER_BATCH: 2
+  BASE_LR: 1e-4
+  LR_BACKBONE: 1e-5
+  WARMUP_ITERS: 0
+  STEPS: (6000,)
+  MAX_ITER: 8000
+  CHECKPOINT_PERIOD: 1000
+
+INPUT:
+  MIN_SIZE_TRAIN: (1300, 1400,1500, 1600, 1700, 1800, 1900, 2000)  # 保持尺寸多样性,才能有个好结果
+  MAX_SIZE_TRAIN: 2400
+  MIN_SIZE_TEST: 2000   # 测试时保持原始尺寸
+  MAX_SIZE_TEST: 4000   # 保持一致，避免不必要的放大
+  CROP:
+    ENABLED: True
+  ROTATE: True
+
+TEST:
+  EVAL_PERIOD: 10000
+  LEXICON_TYPE: None
+
+OUTPUT_DIR:  "output/vitaev2/finetune/a40_rumsey_bs2_final_add_val_final"

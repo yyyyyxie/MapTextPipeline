@@ -1,0 +1,41 @@
+_BASE_: "../Base_det.yaml"
+
+MODEL:
+  # WEIGHTS: "output/vitaev2/finetune/a40_rumsey_bs2_aug_final_final/model_final.pth"
+  WEIGHTS: "output/vitaev2/finetune/a40_rumsey_bs2_aug_final_final_final/model_final.pth"
+  # WEIGHTS: "output/vitaev2/finetune/a40_rumsey_bs2_final_add_val/model_final.pth"
+
+  TRANSFORMER:
+    FROZEN: False
+
+DATASETS:
+  TRAIN: ("rumsey_train_148voc",)
+  TEST: ("rumsey_val_148voc",)
+  # TEST: ("rumsey_test_148voc",)
+
+SOLVER:
+  IMS_PER_BATCH: 4
+  BASE_LR: 1e-4
+  LR_BACKBONE: 1e-5
+  WARMUP_ITERS: 0
+  STEPS: (5000,)
+  MAX_ITER: 6000
+  CHECKPOINT_PERIOD: 2000
+
+# INPUT:
+#   MIN_SIZE_TRAIN: (800,900,1000,1100,1200,1300,1400)
+#   MAX_SIZE_TRAIN: 2000
+#   MIN_SIZE_TEST: 2060
+#   MAX_SIZE_TEST: 4000
+INPUT:
+  MIN_SIZE_TRAIN: (800,900,1000,1100,1200,1300,1400)
+  MAX_SIZE_TRAIN: 2000
+  MIN_SIZE_TEST: 2000
+  MAX_SIZE_TEST: 4000
+
+TEST:
+  EVAL_PERIOD: 1000
+  LEXICON_TYPE: None
+
+OUTPUT_DIR:  "output/vitaev2/test/a40_rumsey_bs2_val_final_final_final"
+# OUTPUT_DIR:  "output/vitaev2/finetune/rumsey_bs4_pretrain120k"
