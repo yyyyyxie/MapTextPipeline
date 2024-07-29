@@ -1,7 +1,7 @@
 _BASE_: "../Base_det.yaml"
 
 MODEL:
-  WEIGHTS: "weights/map/frozen_pretrain_40k.pth"
+  WEIGHTS: "weights/map/frozen_pretrain_40k.pth"  # put weights here
 
   TRANSFORMER:
     FROZEN: False
@@ -20,10 +20,10 @@ SOLVER:
   CHECKPOINT_PERIOD: 1000
 
 INPUT:
-  MIN_SIZE_TRAIN: (1300, 1400,1500, 1600, 1700, 1800, 1900, 2000)  # 保持尺寸多样性,才能有个好结果
+  MIN_SIZE_TRAIN: (1300, 1400,1500, 1600, 1700, 1800, 1900, 2000)  
   MAX_SIZE_TRAIN: 2400
-  MIN_SIZE_TEST: 2000   # 测试时保持原始尺寸
-  MAX_SIZE_TEST: 4000   # 保持一致，避免不必要的放大
+  MIN_SIZE_TEST: 2000  
+  MAX_SIZE_TEST: 4000  
   CROP:
     ENABLED: True
   ROTATE: True

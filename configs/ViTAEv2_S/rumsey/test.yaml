@@ -1,7 +1,7 @@
 _BASE_: "../Base_det.yaml"
 
 MODEL:
-  WEIGHTS: "output/vitaev2/finetune/a40_rumsey_bs2_final_add_val_final/model_final.pth"
+  WEIGHTS: "output/vitaev2/finetune/a40_rumsey_bs2_final_add_val_final/model_final.pth"  # put weights here
 
   TRANSFORMER:
     FROZEN: False
@@ -30,5 +30,5 @@ TEST:
   EVAL_PERIOD: 1000
   LEXICON_TYPE: None
 
-OUTPUT_DIR:  "output/vitaev2/test/a40_rumsey_bs2_test_add_test_final"
-# OUTPUT_DIR:  "output/vitaev2/finetune/rumsey_bs4_pretrain120k"
+OUTPUT_DIR:  "output/vitaev2/test/rumsey_bs2_test_final"
+

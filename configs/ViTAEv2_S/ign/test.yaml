@@ -36,7 +36,6 @@ TEST:
   EVAL_PERIOD: 1000
   LEXICON_TYPE: None
 
-# OUTPUT_DIR:  "output/vitaev2/ign/finetune/a40_finetune2"
-OUTPUT_DIR:  "output/vitaev2/ign/finetune/a40_ign_val"
+OUTPUT_DIR:  "output/vitaev2/ign/finetune/ign_val"
 
 # OUTPUT_DIR:  "output/vitaev2/finetune/rumsey_bs4_pretrain120k"

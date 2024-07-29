@@ -225,9 +225,10 @@ class Trainer(DefaultTrainer):
         for key, value in model.named_parameters(recurse=True):
         # ===================================================================
             if cfg.MODEL.TRANSFORMER.FROZEN == True:    
-            # 已知的未成功加载的参数列表
+                # tmlp_head is a model component in adet/layers/deformable_transformer.py/line 483, not in use here
+                #
                 if key in unloaded_params or 'external_tmlp_head' in key:
-                    # 保持这些参数可训练
+                    # Keep these parameters trainable
                     value.requires_grad = True
                     print(key)
                 else:

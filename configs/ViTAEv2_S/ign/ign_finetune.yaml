@@ -24,10 +24,10 @@ SOLVER:
 #   MIN_SIZE_TEST: 1440
 #   MAX_SIZE_TEST: 2000
 INPUT:
-  MIN_SIZE_TRAIN: (1300, 1400,1500, 1600, 1700, 1800, 1900, 2000)  # 保持尺寸多样性,才能有个好结果
+  MIN_SIZE_TRAIN: (1300, 1400,1500, 1600, 1700, 1800, 1900, 2000)  
   MAX_SIZE_TRAIN: 2400
-  MIN_SIZE_TEST: 2000   # 测试时保持原始尺寸
-  MAX_SIZE_TEST: 4000   # 保持一致，避免不必要的放大
+  MIN_SIZE_TEST: 2000   
+  MAX_SIZE_TEST: 4000   
   CROP:
     ENABLED: True
   ROTATE: True
@@ -36,7 +36,4 @@ TEST:
   EVAL_PERIOD: 1000
   LEXICON_TYPE: None
 
-OUTPUT_DIR:  "output/vitaev2/ign/finetune/a40_finetune2"
-# OUTPUT_DIR:  "output/vitaev2/ign/finetune/a40_debug"
-
-# OUTPUT_DIR:  "output/vitaev2/finetune/rumsey_bs4_pretrain120k"
+OUTPUT_DIR:  "output/vitaev2/ign/finetune"

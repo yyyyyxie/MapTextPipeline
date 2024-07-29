@@ -7,7 +7,6 @@ def simplify_polygon(poly, tolerance=0.01):
     return poly.simplify(tolerance, preserve_topology=True)
 
 def ensure_correct_orientation(poly):
-    # 确保多边形是顺时针方向
     if isinstance(poly, Polygon):
         if not shapely.geometry.polygon.orient(poly, sign=-1.0).is_empty:
             return shapely.geometry.polygon.orient(poly, sign=-1.0)
@@ -102,24 +101,20 @@ def fix(raw_data):
     return data
 
 def main():
-    # 创建解析器
     parser = argparse.ArgumentParser(description="Process input and output file paths for JSON data.")
     parser.add_argument('--input_json', type=str, default='text_results_val.json', help='Input JSON file path')
     parser.add_argument('--input_image_id_json', type=str, default='datasets/rumsey/rumsey_val_image_id.json', help='Input JSON file path')
     parser.add_argument('--output_json', type=str,default='output_results.json', help='Output JSON file path')
     
-    # 解析命令行参数
     args = parser.parse_args()
     
     json_file_path = args.input_json
     input_image_id = args.input_image_id_json
     output_path = args.output_json
 
-    # 从json文件中加载数据
     with open(input_image_id, 'r', encoding='utf-8') as file:
         image_id = json.load(file)
 
-    # 从json文件中加载数据
     with open(json_file_path, 'r', encoding='utf-8') as file:
         pred_results = json.load(file)
 
