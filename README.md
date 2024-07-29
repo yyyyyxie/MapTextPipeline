@@ -9,11 +9,6 @@ https://rrc.cvc.uab.es/?ch=28&com=introduction
 
 Text on digitized historical maps contains valuable information providing georeferenced political and cultural context, yet the wealth of information in digitized historical maps remains largely inaccessible due to their unsearchable raster format. This competition aims to address the unique challenges of **detecting and recognizing** textual information (e.g., place names) and **linking** words to form location phrases.
 
-While the *detection* and *recognition* tasks share similarities with the long line of prior robust reading competitions [1,2], historical map text extraction presents challenges such as dense text regions, rotated and curved text and widely spaced characters which are not very common in scene text extraction problems. The word *linking* task, in particular, is quite challenging as words can be highly spaced with complicated text-like distractors, even other words appearing between the characters. Furthermore, words within a single location phrase may be divided across multiple lines to optimize label placement. The figure below illustrates primary challenges.
-
-![map_picture_2.jpg](https://rrc.cvc.uab.es/files/map_picture_2.jpg)
-
-
 
 # Usage
 
