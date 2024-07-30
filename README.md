@@ -66,7 +66,7 @@ JSON results will be saved in output/vitaev2/test/rumsey_bs2_test_final/inferenc
 This project utilizes methods related to [DNTextSpotter](https://github.com/yyyyyxie/DNTextSpotter). If you find MapTextPipeline helpful, please consider giving this repo a star ⭐ and citing:
 
 ```
-@article{Qian2024DNTextSpotter,
+@article{Yu2024DNTextSpotter,
   author    = {Yu, Xie and Qian, Qiao and Jun, Gao and Shaoyao, Huang and Tianxiang, Wu and Jiaqing, Fan and Ziqiang, Cao and Zili, Wang and Yue, Zhang and Huyang Sun and Jielei Zhang},
   title     = {DNTextSpotter: Arbitrary-Shaped Scene Text Spotting via Improved Denoising Training},
   journal   = {arxiv},
