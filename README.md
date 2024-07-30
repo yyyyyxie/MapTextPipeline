@@ -12,9 +12,6 @@ Text on digitized historical maps contains valuable information providing georef
 
 # Usage
 
-
-## Usage
-
 - ### Installation
 
 Python 3.8 + PyTorch 2.0.1 + CUDA 11.7 + Detectron2
@@ -67,8 +64,12 @@ JSON results will be saved in output/vitaev2/test/rumsey_bs2_test_final/inferenc
 ## Citation
 
 This project utilizes methods related to [DNTextSpotter](https://github.com/yyyyyxie/DNTextSpotter). If you find MapTextPipeline helpful, please consider giving this repo a star ⭐ and citing:
-
-
+@article{Qian2024DNTextSpotter,
+  author    = {Yu, Xie and Qian, Qiao and Jun, Gao and Shaoyao, Huang and Tianxiang, Wu and Jiaqing, Fan and Ziqiang, Cao and Zili, Wang and Yue, Zhang and Huyang Sun and Jielei Zhang},
+  title     = {DNTextSpotter: Arbitrary-Shaped Scene Text Spotting via Improved Denoising Training},
+  journal   = {arxiv},
+  year      = {2024},
+}
 
 ## Acknowledgement
 
