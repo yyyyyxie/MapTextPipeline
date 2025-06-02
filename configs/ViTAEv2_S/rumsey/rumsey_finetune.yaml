@@ -7,12 +7,11 @@ MODEL:
     FROZEN: False
 
 DATASETS:
-  # TRAIN: ("rumsey_train_148voc","rumsey_val_148voc",)
   TRAIN: ("rumsey_train_148voc",)
   TEST: ("rumsey_val_148voc",)
 
 SOLVER:
-  IMS_PER_BATCH: 2
+  IMS_PER_BATCH: 4
   BASE_LR: 1e-4
   LR_BACKBONE: 1e-5
   WARMUP_ITERS: 0

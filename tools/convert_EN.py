@@ -1,12 +1,14 @@
-import os
-import json
-import numpy as np
-from tools.utils.bezier_utils import polygon_to_bezier_pts
-from tools.utils.utils import word_to_index_list, index_list_to_word
-from tools.utils.geometry import *
-import cv2
 import argparse
- 
+import json
+import os
+
+import cv2
+import numpy as np
+
+from tools.utils.bezier_utils import polygon_to_bezier_pts
+from tools.utils.geometry import *
+from tools.utils.utils import index_list_to_word, word_to_index_list
+
 
 def convert_to_bezier_points(vertices, img):
     # 确保顶点数量为偶数

@@ -1,0 +1,38 @@
+_BASE_: "../Base_det.yaml"
+
+MODEL:
+  WEIGHTS: "output/vitaev2/rumsey/finetune/rumsey_tw_pretrain/model_final.pth"
+  # WEIGHTS: "weights/rects_vitaev2-s_pretrain.pth"  #  # put weights here
+  TRANSFORMER:
+    VOC_SIZE: 5462
+    FROZEN: False
+    CUSTOM_DICT: "chn_cls_list"
+
+DATASETS:
+  TRAIN: ("rumsey_tw_train_148voc", "rumsey_tw_val_148voc",)  # rumsey_tw_train_synth_148voc
+  TEST: ("rumsey_tw_val_148voc",)
+
+SOLVER:
+  IMS_PER_BATCH: 4
+  BASE_LR: 1e-4
+  LR_BACKBONE: 1e-5
+  WARMUP_ITERS: 0
+  STEPS: (6000,)
+  MAX_ITER: 8000
+  CHECKPOINT_PERIOD: 100000
+
+
+INPUT:
+  MIN_SIZE_TRAIN: (1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000)  
+  MAX_SIZE_TRAIN: 2500
+  MIN_SIZE_TEST: 2000   
+  MAX_SIZE_TEST: 4000  
+  CROP:
+    ENABLED: True
+  ROTATE: True
+
+TEST:
+  EVAL_PERIOD: 10000
+  LEXICON_TYPE: None
+
+OUTPUT_DIR:  "output/vitaev2/rumsey/finetune/rumsey_tw_ft_add_pretrain_add_val"
