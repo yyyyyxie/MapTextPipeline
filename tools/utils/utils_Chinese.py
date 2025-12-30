@@ -17,7 +17,7 @@ def read_Chinese(file):
     return ans
 
 
-CTLABELS = read_Chinese("./chn_cls_list")  # 替换为你的 txt 文件路径
+CTLABELS = read_Chinese("my/chn_cls_list")  # 替换为你的 txt 文件路径
 
 
 

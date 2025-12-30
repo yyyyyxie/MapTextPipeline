@@ -5,9 +5,13 @@ import os
 import cv2
 import numpy as np
 
-from tools.utils.bezier_utils import polygon_to_bezier_pts
-from tools.utils.geometry import *
-from tools.utils.utils import index_list_to_word, word_to_index_list
+# from tools.utils.bezier_utils import polygon_to_bezier_pts
+# from tools.utils.geometry import *
+# from tools.utils.utils import index_list_to_word, word_to_index_list
+
+from utils.bezier_utils import polygon_to_bezier_pts
+from utils.utils_Chinese import word_to_index_list, index_list_to_word
+from utils.geometry import *
 
 
 def convert_to_bezier_points(vertices, img):
@@ -99,9 +103,9 @@ def convert_to_coco(original_annotations):
 def main():
     # 创建解析器
     parser = argparse.ArgumentParser(description="Process input and output file paths for JSON data.")
-    parser.add_argument('--input_json', type=str, default='datasets/rumsey/rumsey_val.json', help='Input JSON file path')
-    parser.add_argument('--output_json', type=str,default='datasets/rumsey/rumsey_val_148voc.json', help='Output JSON file path')
-    parser.add_argument('--output_image_id_json', type=str,default='datasets/rumsey/rumsey_val_image_id.json', help='Output JSON file path')
+    parser.add_argument('--input_json', type=str, default='rumsey_val.json', help='Input JSON file path')
+    parser.add_argument('--output_json', type=str,default='icdar/rumsey_val_148voc.json', help='Output JSON file path')
+    parser.add_argument('--output_image_id_json', type=str,default='icdar/rumsey_val_image_id.json', help='Output JSON file path')
 
     
     # 解析命令行参数
@@ -119,7 +123,6 @@ def main():
     # 确保输出目录存在
     os.makedirs(os.path.dirname(converted_json_path), exist_ok=True)
     os.makedirs(os.path.dirname(output_image_id), exist_ok=True)
-
 
     # 剩余的功能函数和代码
     converted_coco, image_id_to_file = convert_to_coco(original_annotations)

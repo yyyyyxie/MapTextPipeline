@@ -14,8 +14,10 @@ def compute_bezier_curve(bezier_pts, num_points=100):
         curve_points += np.outer(binomial_coeff, bezier_pts[i])
     return curve_points
 
-# 加载数据集
-with open('datasets/voc148/tc25synth_train_5461voc.json', 'r', encoding='utf-8') as f:
+# 加载数据集 icdar/rumsey_val_148voc.json
+# with open('datasets/voc148/tc25synth_train_5461voc.json', 'r', encoding='utf-8') as f:
+with open('icdar/rumsey_val_148voc.json', 'r', encoding='utf-8') as f:
+
     data = json.load(f)
 
 # 获取图像和注释
